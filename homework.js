@@ -5,18 +5,57 @@
 //
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
+function remove(people, member) {
+  let newArray = [];
+
+  for (let i = 0; i < people.length; i++) {
+    if (member !== people[i]) {
+      newArray.push(people[i]);
+    }
+  }
+  return newArray;
+}
 
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
 
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
+function sum(numbers) {
+  let total = 0;
+
+  for (let num of numbers) {
+    total += num;
+  }
+
+  return total;
+}
 
 // 4. Create a function called "average" that takes an array of numbers
-// and returns the average of those numbers.
+// // and returns the average of those numbers.
+function average(numbers) {
+  let count = numbers.length;
+  let newSum = sum(numbers);
+  if (count === 0) {
+    return undefined;
+  } else {
+    return newSum / count;
+  }
+}
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+function minimum(numbers) {
+  let small = 0;
+  for (let x of numbers) {
+    if (x === 0) {
+      return undefined;
+    } else if (x < small || small === 0) {
+      small = Math.min(...numbers);
+      return small;
+    }
+  }
+}
 
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
